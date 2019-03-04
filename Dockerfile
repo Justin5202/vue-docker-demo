@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . /app/
 # container port
 EXPOSE 80
-RUN npm install \
+RUN npm install --registry=https://registry.npm.taobao.org \
     && npm run build \
     && cp -r dist/* /var/www/html \
     && rm -rf /app
